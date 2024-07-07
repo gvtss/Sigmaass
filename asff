@@ -5532,7 +5532,7 @@ local Window = Library:Window({Size = UDim2.new(0,580,0,600)}) do
 				end 
 			end});
 			crosshairSection:Toggle({Name = "Always Rotating", Flag = "Crosshair Always Rotating"})
-			crosshairSection:Slider({Name = "Speed", Flag = 'Crosshair Speed', Min = 0, Max = 24, Default = 12, Decimals = 0.1})
+			crosshairSection:Slider({Name = "Speed", Flag = 'Crosshair Speed', Min = 0, Max = 100, Default = 12, Decimals = 0.1})
 			crosshairSection:Slider({Name = "Gap Size", Flag = 'Crosshair Gap Size', Min = 0, Max = 30, Default = 12, Decimals = 1})
 			crosshairSection:Slider({Name = "Length", Flag = 'Crosshair Length', Min = 0, Max = 30, Default = 12, Decimals = 1})
 			crosshairSection:Slider({Name = "Thickness", Flag = 'Crosshair Thickness', Min = 0.1, Max = 5, Default = 1.5, Decimals = 0.1, Callback = function(Int)
