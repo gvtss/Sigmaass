@@ -5351,7 +5351,7 @@ local Window = Library:Window({Size = UDim2.new(0,580,0,600)}) do
 		end 
 	end
 	-- // Legit  
-	local legit = Window:Page({Name = "Legit"}) do 
+	local legit = Window:Page({Name = "Camlock"}) do 
 		local Vertical;
 		local Horizontal;
 		local Smoothness;
