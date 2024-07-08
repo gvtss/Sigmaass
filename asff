@@ -1,19 +1,9 @@
 --[[
-		
 
-███╗░░██╗███████╗██████╗░██╗░░░██╗██╗░░░░░░█████╗░░░░████████╗███████╗░█████╗░██╗░░██╗
-████╗░██║██╔════╝██╔══██╗██║░░░██║██║░░░░░██╔══██╗░░░╚══██╔══╝██╔════╝██╔══██╗██║░░██║
-██╔██╗██║█████╗░░██████╦╝██║░░░██║██║░░░░░███████║░░░░░░██║░░░█████╗░░██║░░╚═╝███████║
-██║╚████║██╔══╝░░██╔══██╗██║░░░██║██║░░░░░██╔══██║░░░░░░██║░░░██╔══╝░░██║░░██╗██╔══██║
-██║░╚███║███████╗██████╦╝╚██████╔╝███████╗██║░░██║██╗░░░██║░░░███████╗╚█████╔╝██║░░██║
-╚═╝░░╚══╝╚══════╝╚═════╝░░╚═════╝░╚══════╝╚═╝░░╚═╝╚═╝░░░╚═╝░░░╚══════╝░╚════╝░╚═╝░░╚═╝
-
-// Fixed by @finobe 28/05/24 :^) \\ 
+//  \\ 
 
 
-Enjoy skidding this terrific code from april btw
 
-fixed target aim blah blah
 ]]
 
 
@@ -5711,16 +5701,16 @@ local Window = Library:Window({Size = UDim2.new(0,580,0,600)}) do
 		Cfgs:Textbox({Flag = "SettingsConfigurationName", Placeholder = "Config name"})
 		--
 		local CurrentList = {};
-		if not isfolder("Lunar") then 
-			makefolder("Lunar")
+		if not isfolder("Xploits") then 
+			makefolder("Xploits")
 		end 
-		if not isfolder("Lunar/Configs") then 
-			makefolder("Lunar/Configs")
+		if not isfolder("Xploits/Configs") then 
+			makefolder("Xploits/Configs")
 		end 
 		local function UpdateConfigList()
 			local List = {};
-			for idx, file in ipairs(listfiles("Lunar/Configs")) do
-				local FileName = file:gsub("Lunar/Configs\\", ""):gsub(".cfg", "")
+			for idx, file in ipairs(listfiles("Xploits/Configs")) do
+				local FileName = file:gsub("Xploits/Configs\\", ""):gsub(".cfg", "")
 				List[#List + 1] = FileName;
 			end;
 
@@ -5742,28 +5732,28 @@ local Window = Library:Window({Size = UDim2.new(0,580,0,600)}) do
 		--
 		Cfgs:Button({Name = "Create", Callback = function()
 			local ConfigName = flags.SettingsConfigurationName;
-			if ConfigName == "" or isfile("Lunar/Configs/" .. ConfigName .. ".cfg") then
+			if ConfigName == "" or isfile("Xploits/Configs/" .. ConfigName .. ".cfg") then
 				return;
 			end;
-			writefile("Lunar/Configs/" .. ConfigName .. ".cfg", Library:GetConfig());
+			writefile("Xploits/Configs/" .. ConfigName .. ".cfg", Library:GetConfig());
 			UpdateConfigList();
 		end})
 		Cfgs:Button({Name = "Save", Callback = function()
 			local SelectedConfig = flags.SettingConfigurationList;
 			if SelectedConfig then
-				writefile("Lunar/Configs/" .. SelectedConfig .. ".cfg", Library:GetConfig())
+				writefile("Xploits/Configs/" .. SelectedConfig .. ".cfg", Library:GetConfig())
 			end;
 		end})
 		Cfgs:Button({Name = "Load", Callback = function()
 			local SelectedConfig = flags.SettingConfigurationList;
 			if SelectedConfig then
-				Library:LoadConfig(readfile("Lunar/Configs/" .. SelectedConfig .. ".cfg"))
+				Library:LoadConfig(readfile("Xploits/Configs/" .. SelectedConfig .. ".cfg"))
 			end
 		end})
 		Cfgs:Button({Name = "Delete", Callback = function()
 			local SelectedConfig = flags.SettingConfigurationList;
 			if SelectedConfig then
-				delfile("Lunar/Configs/" .. SelectedConfig .. ".cfg")
+				delfile("Xploits/Configs/" .. SelectedConfig .. ".cfg")
 			end
 			UpdateConfigList();
 		end})
